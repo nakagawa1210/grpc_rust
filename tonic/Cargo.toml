@@ -6,6 +6,7 @@ members = [
     "tonic-types",
 
     # Non-published crates
+    "broker",
     "examples",
     "interop",
 
