@@ -6,6 +6,14 @@ edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[[bin]] # Bin to run the MsgBroker gRPC server
+name = "server"
+path = "src/server.rs"
+
+[[bin]]
+name = "recv"
+path = "src/recv_client.rs"
+
 [dependencies]
 tonic = "0.3"
 prost = "0.6"

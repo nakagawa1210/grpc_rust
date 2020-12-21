@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-package msg;
+package msgbroker;
 
-service Frame {
-  rpc CheckId (IdData) returns (Response){}
-  rpc RecvMsg (IdData) returns (stream RecvData){}
-  rpc SendMsg (stream SendData) returns (Response){}
+service Broker {
+  rpc CheckId (IdData) returns (MsgResponse){}
+  //rpc RecvMsg (IdData) returns (stream RecvData){}
+ // rpc SendMsg (stream SendData) returns (MsgResponse){}
 }
 
 // T_1,T_2,T_3,T_4 is timestamp
@@ -44,7 +44,7 @@ message RecvData {
   double T_4 = 9;   
 }
 
-message Response {
+message MsgResponse {
   int32 length = 1;
   int32 command = 2;
   int32 dest = 3;
